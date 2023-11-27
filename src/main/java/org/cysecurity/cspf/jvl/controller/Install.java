@@ -103,7 +103,7 @@ public class Install extends HttpServlet {
      protected boolean setup(String i) throws IOException
     {
         
-       if(i.equals("1"))   
+       if("1".equals(i))   
        {
  
                     try
