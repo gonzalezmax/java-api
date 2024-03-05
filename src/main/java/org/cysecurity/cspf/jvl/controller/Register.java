@@ -45,7 +45,7 @@ public class Register extends HttpServlet {
           String email=request.getParameter("email");
           String about=request.getParameter("About");
           String secret=request.getParameter("secret");
-          if(secret==null || secret.equals(""))
+          if(secret==null || "".equals(secret))
           {
               secret="nosecret";
           }
