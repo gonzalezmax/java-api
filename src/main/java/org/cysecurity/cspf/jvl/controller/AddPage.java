@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +50,7 @@ public class AddPage extends HttpServlet {
             }
                 if(f.createNewFile())
                 {
-                    BufferedWriter bw=new BufferedWriter(new FileWriter(f.getAbsoluteFile()));
+                    BufferedWriter bw=Files.newBufferedWriter(f.getAbsoluteFile().toPath());
                     bw.write(content);
                     bw.close();
                     out.print("Successfully created the file: <a href='../pages/"+fileName+"'>"+fileName+"</a>");
